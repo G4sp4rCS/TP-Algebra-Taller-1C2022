@@ -35,3 +35,6 @@ satisfaceCollatz 1 2 = False
 satisfaceCollatz 1 3 = False
 satisfaceCollatz n m  | kEsimoCollatz n m == 1 = True
 				         | otherwise = False
+						 
+--Termina 1
+--Empieza 2
