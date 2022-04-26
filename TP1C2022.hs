@@ -52,15 +52,21 @@ cantidadTerminosPares 1 = 0
 cantidadTerminosPares n | esPar n == True = 1+ cantidadTerminosPares (n `div` 2)
                                                          | otherwise = cantidadTerminosPares (3 * n + 1) 
                                                     													 
---TERMINAR 3
+--Termina 3
 
 
 --Empieza 4
 
---largoSecuencia :: Integer -> Integer
+largoSecuencia :: Integer -> Integer
 
---largoSecuencia 1 = 0
---largoSecuencia n | kEsimoCollatz n  == 1 = n 
+largoSecuencia 1 = 0
+largoSecuencia n | esPar n == True = 1+ largoSecuencia(n `div` 2)
+                                        | otherwise = 1+ largoSecuencia(3 * n + 1) 
+--Termina 4
+
+--Empieza 5
+
+secuenciaMasLargaHasta :: Integer -> Integer
                                         
 
 														 
