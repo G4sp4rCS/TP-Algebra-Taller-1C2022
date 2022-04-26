@@ -46,16 +46,11 @@ satisfaceCollatzHasta n m|satisfaceCollatz n m == True = satisfaceCollatzHasta (
 --Termina 2
 
 --Empieza 3
-
-
-cantTerminosParesDesde n 0 = 0
-cantTerminosParesDesde n t | esPar(kEsimoCollatz n t) == True = 1 + cantTerminosParesDesde n (t-1)  
-						   | otherwise = cantTerminosParesDesde n(t-1)  
-
-
+ 
 cantidadTerminosPares :: Integer -> Integer
-cantidadTerminosPares 0 = 1
-cantidadTerminosPares n = cantTerminosParesDesde n n 
+cantidadTerminosPares 1 = 0
+cantidadTerminosPares n | esPar n == True = 1+ cantidadTerminosPares (n `div` 2)
+                                                         | otherwise = cantidadTerminosPares (3 * n + 1) 
                                                     													 
 --TERMINAR 3
 
