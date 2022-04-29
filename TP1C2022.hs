@@ -3,17 +3,7 @@ esPar :: Integer -> Bool
 esPar n | n == 0 = True
                  | n == 1 = False
                  | otherwise = esPar(n-2)
-
-
---VERIFICA SI CUMPLE LA CONJETURA DE COLLATZ
-sequenciaCollatz :: Integer ->  Bool
-
-sequenciaCollatz n | n == 1 = True
-                                            | esPar n == True =  sequenciaCollatz(n `div` 2)
-                                            | esPar n == False = sequenciaCollatz(3 * n + 1 )
-				    | otherwise = False
-                     
-                                        
+                                                             
                      
  --CALCULA EL TERMINO k-ESIMO DE LA SUCESION DE COLLATZ DE UN NUMERO              
 kEsimoCollatz :: Integer -> Integer -> Integer
@@ -65,16 +55,14 @@ largoSecuencia n | esPar n == True = 1+ largoSecuencia(n `div` 2)
 --Termina 4
 
 --Empieza 5
+secuenciaMasLargaHastaDesde :: Integer -> Integer
+secuenciaMasLargaHastaDesde m k | m == k = m 
+							      | largoSecuencia m  > largoSecuencia k =  secuenciaMasLargaHastaDesde m (k+1)
+							      |otherwise = secuenciaMasLargaHastaDesde (m-1) k 
+
+
+
 
 secuenciaMasLargaHasta :: Integer -> Integer
-                                        
 
-														 
-														 
-														 
-														 
-
-
-
-
-
+secuenciaMasLargaHasta n = secuenciaMasLargaHastaDesde n 1 
