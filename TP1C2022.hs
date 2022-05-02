@@ -20,7 +20,6 @@ satisfaceCollatz :: Integer -> Integer -> Bool
 
 satisfaceCollatz n m  | kEsimoCollatz n m == 1 = True
  | otherwise = False
-						 
 --Termina 1
 
 --Empieza 2
@@ -31,8 +30,6 @@ satisfaceCollatzHasta :: Integer -> Integer -> Bool
 satisfaceCollatzHasta 0 m = True
 satisfaceCollatzHasta n m|satisfaceCollatz n m == True = satisfaceCollatzHasta (n-1) m 
  | otherwise = False
-															
-
 --Termina 2
 
 --Empieza 3
@@ -40,8 +37,7 @@ satisfaceCollatzHasta n m|satisfaceCollatz n m == True = satisfaceCollatzHasta (
 cantidadTerminosPares :: Integer -> Integer
 cantidadTerminosPares 1 = 0
 cantidadTerminosPares n | esPar n == True = 1+ cantidadTerminosPares (n `div` 2)
- | otherwise = cantidadTerminosPares (3 * n + 1) 
-                                                    													 
+ | otherwise = cantidadTerminosPares (3 * n + 1)
 --Termina 3
 
 
